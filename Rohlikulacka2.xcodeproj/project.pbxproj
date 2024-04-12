@@ -17,6 +17,11 @@
 		A880F9582BC9345100FD0DE5 /* InvoiceInfoRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9572BC9345100FD0DE5 /* InvoiceInfoRectView.swift */; };
 		A880F95A2BC9386E00FD0DE5 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9592BC9386E00FD0DE5 /* Day.swift */; };
 		A880F95D2BC9500600FD0DE5 /* HomeListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F95C2BC9500600FD0DE5 /* HomeListCellView.swift */; };
+		A880F9612BC96DA700FD0DE5 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9602BC96DA700FD0DE5 /* SideMenuView.swift */; };
+		A880F9632BC97BC900FD0DE5 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9622BC97BC900FD0DE5 /* Month.swift */; };
+		A880F9672BC987DD00FD0DE5 /* InvoiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9662BC987DD00FD0DE5 /* InvoiceDetailView.swift */; };
+		A880F96B2BC98C6400FD0DE5 /* RouteCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F96A2BC98C6400FD0DE5 /* RouteCreationView.swift */; };
+		A880F96D2BC9C1B600FD0DE5 /* RouteCreationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F96C2BC9C1B600FD0DE5 /* RouteCreationCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		A880F9572BC9345100FD0DE5 /* InvoiceInfoRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceInfoRectView.swift; sourceTree = "<group>"; };
 		A880F9592BC9386E00FD0DE5 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		A880F95C2BC9500600FD0DE5 /* HomeListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCellView.swift; sourceTree = "<group>"; };
+		A880F9602BC96DA700FD0DE5 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		A880F9622BC97BC900FD0DE5 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		A880F9662BC987DD00FD0DE5 /* InvoiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceDetailView.swift; sourceTree = "<group>"; };
+		A880F96A2BC98C6400FD0DE5 /* RouteCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCreationView.swift; sourceTree = "<group>"; };
+		A880F96C2BC9C1B600FD0DE5 /* RouteCreationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCreationCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +103,11 @@
 		A880F9472BC9246900FD0DE5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A880F9642BC987B100FD0DE5 /* Invoice */,
 				A880F94D2BC9249800FD0DE5 /* Home */,
 				A880F94A2BC9248000FD0DE5 /* Root */,
+				A880F9682BC98C3000FD0DE5 /* RouteCreation */,
+				A880F95E2BC96D7400FD0DE5 /* SideMenu */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -125,20 +138,18 @@
 		A880F94D2BC9249800FD0DE5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A880F95B2BC94FF300FD0DE5 /* Components */,
-				A880F94E2BC924A200FD0DE5 /* View */,
+				A880F94E2BC924A200FD0DE5 /* Views */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		A880F94E2BC924A200FD0DE5 /* View */ = {
+		A880F94E2BC924A200FD0DE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A880F94F2BC924C500FD0DE5 /* HomeView.swift */,
 				A880F95C2BC9500600FD0DE5 /* HomeListCellView.swift */,
-				A880F9572BC9345100FD0DE5 /* InvoiceInfoRectView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A880F9512BC9326D00FD0DE5 /* Models */ = {
@@ -146,6 +157,7 @@
 			children = (
 				A880F9522BC9327D00FD0DE5 /* Route.swift */,
 				A880F9592BC9386E00FD0DE5 /* Day.swift */,
+				A880F9622BC97BC900FD0DE5 /* Month.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,11 +170,54 @@
 			path = MockData;
 			sourceTree = "<group>";
 		};
-		A880F95B2BC94FF300FD0DE5 /* Components */ = {
+		A880F95E2BC96D7400FD0DE5 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				A880F95F2BC96D8300FD0DE5 /* View */,
 			);
-			path = Components;
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		A880F95F2BC96D8300FD0DE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A880F9602BC96DA700FD0DE5 /* SideMenuView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A880F9642BC987B100FD0DE5 /* Invoice */ = {
+			isa = PBXGroup;
+			children = (
+				A880F9652BC987BD00FD0DE5 /* Views */,
+			);
+			path = Invoice;
+			sourceTree = "<group>";
+		};
+		A880F9652BC987BD00FD0DE5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A880F9572BC9345100FD0DE5 /* InvoiceInfoRectView.swift */,
+				A880F9662BC987DD00FD0DE5 /* InvoiceDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A880F9682BC98C3000FD0DE5 /* RouteCreation */ = {
+			isa = PBXGroup;
+			children = (
+				A880F9692BC98C5200FD0DE5 /* Views */,
+			);
+			path = RouteCreation;
+			sourceTree = "<group>";
+		};
+		A880F9692BC98C5200FD0DE5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A880F96A2BC98C6400FD0DE5 /* RouteCreationView.swift */,
+				A880F96C2BC9C1B600FD0DE5 /* RouteCreationCellView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,12 +291,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A880F95A2BC9386E00FD0DE5 /* Day.swift in Sources */,
+				A880F96B2BC98C6400FD0DE5 /* RouteCreationView.swift in Sources */,
+				A880F9672BC987DD00FD0DE5 /* InvoiceDetailView.swift in Sources */,
 				A880F95D2BC9500600FD0DE5 /* HomeListCellView.swift in Sources */,
 				A880F9562BC9332A00FD0DE5 /* MockData.swift in Sources */,
 				A880F9502BC924C500FD0DE5 /* HomeView.swift in Sources */,
 				A880F9532BC9327D00FD0DE5 /* Route.swift in Sources */,
 				A880F93B2BC923C100FD0DE5 /* ContentView.swift in Sources */,
+				A880F9612BC96DA700FD0DE5 /* SideMenuView.swift in Sources */,
 				A880F9582BC9345100FD0DE5 /* InvoiceInfoRectView.swift in Sources */,
+				A880F9632BC97BC900FD0DE5 /* Month.swift in Sources */,
+				A880F96D2BC9C1B600FD0DE5 /* RouteCreationCellView.swift in Sources */,
 				A880F9392BC923C100FD0DE5 /* Rohlikulacka2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

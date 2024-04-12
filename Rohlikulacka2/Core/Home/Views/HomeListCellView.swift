@@ -15,7 +15,7 @@ struct HomeListCellView: View {
         VStack(alignment: .leading) {
             Text(day.displayDate)
                 .font(.headline)
-                .foregroundStyle(.purple)
+                .foregroundStyle(.primary)
             
             Divider()
             
@@ -41,16 +41,17 @@ struct HomeListCellView: View {
             HStack {
                 HStack(spacing: 3) {
                     Image(systemName: "bag.fill")
+                        .font(.headline)
                     Text("\(day.ordersPerDay)")
                 }
                 
                 Text("\(day.earnPerDay) Kc")
-                    .font(.title3)
-                    .fontWeight(.bold)
+                    .foregroundStyle(.green)
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
-            .font(.headline)
-            .foregroundStyle(.purple)
+            .font(.title3)
+            .fontWeight(.bold)
+            .foregroundStyle(.primary)
             
             
         }

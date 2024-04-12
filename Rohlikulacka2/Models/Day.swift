@@ -9,14 +9,19 @@ import Foundation
 
 struct Day: Identifiable {
     var id: String = UUID().uuidString
-    var date: Date
+    var day: Date
     var routes: [Route]
     
     var displayDate: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        dateFormatter.locale = Locale(identifier: "cs")
-        return dateFormatter.string(from: self.date)
+        let day = self.day.formatted(
+            .dateTime
+                .locale(Locale(identifier: "cs"))
+                .weekday(.wide)
+                .day(.defaultDigits)
+                .month(.wide)
+        )
+            .capitalized
+        return day
     }
     
     var ordersPerDay: Int {

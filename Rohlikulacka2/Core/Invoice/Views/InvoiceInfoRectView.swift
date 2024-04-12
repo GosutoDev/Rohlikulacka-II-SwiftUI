@@ -11,15 +11,17 @@ struct InvoiceInfoRectView: View {
     
     let invoiceColor: LinearGradient = LinearGradient(colors: [.pink, .purple], startPoint: .topLeading, endPoint: .bottomTrailing)
     
+    let month: Month
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Fakturace")
+                Text("Přehled služeb")
                     .font(.footnote)
                 
                 HStack {
                     Image(systemName: "creditcard.fill")
-                    Text("45 500 Kc")
+                    Text("\(month.earnPerMonth) Kc")
                 }
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -29,7 +31,7 @@ struct InvoiceInfoRectView: View {
             
             VStack(alignment: .trailing) {
                 HStack(spacing: 3) {
-                    Text("411")
+                    Text("\(month.ordersPerMonth)")
                         .font(.callout)
                     Image(systemName: "bag.fill")
                         .imageScale(.small)
@@ -38,7 +40,7 @@ struct InvoiceInfoRectView: View {
                 Spacer()
                 
                 HStack(spacing: 3) {
-                    Text("24")
+                    Text("\(month.workDays)")
                         .font(.callout)
                     Image(systemName: "calendar")
                         .imageScale(.small)
@@ -55,5 +57,5 @@ struct InvoiceInfoRectView: View {
 }
 
 #Preview {
-    InvoiceInfoRectView()
+    InvoiceInfoRectView(month: MockData.months.first!)
 }

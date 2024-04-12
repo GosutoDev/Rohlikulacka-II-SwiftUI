@@ -16,10 +16,12 @@ struct Route: Identifiable {
     var bonus: Int?
     
     var displayTime: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = .short
-        dateFormatter.locale = Locale(identifier: "cs")
-        return dateFormatter.string(from: self.time)
+        let time = time.formatted(
+            .dateTime
+                .hour(.defaultDigits(amPM: .wide))
+                .minute(.defaultDigits)
+        )
+        return time
     }
     
     // mock still
