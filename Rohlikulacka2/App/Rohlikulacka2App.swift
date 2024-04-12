@@ -11,7 +11,7 @@ import SwiftUI
 struct Rohlikulacka2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
