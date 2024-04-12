@@ -33,6 +33,7 @@ struct RouteCreationView: View {
                             .tint(.black)
                             .font(.headline)
                             .padding(.vertical)
+                            .id(0)
                         
                         Divider()
                         
@@ -70,10 +71,14 @@ struct RouteCreationView: View {
                         .onTapGesture {
                             withAnimation(.bouncy) {
                                 unfoldOptionals.toggle()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                                    withAnimation {
-                                        proxy.scrollTo(1, anchor: .center)
+                                if unfoldOptionals {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                        withAnimation {
+                                            proxy.scrollTo(1, anchor: .center)
+                                        }
                                     }
+                                } else {
+                                    proxy.scrollTo(0, anchor: .top)
                                 }
                             }
                         }
