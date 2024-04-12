@@ -52,6 +52,8 @@ struct RouteCreationView: View {
                     .padding()
                     
                     
+                    
+                    
                     // Optional setts
                     VStack(alignment: .leading) {
                         HStack {
@@ -68,8 +70,10 @@ struct RouteCreationView: View {
                         .onTapGesture {
                             withAnimation(.bouncy) {
                                 unfoldOptionals.toggle()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                                    proxy.scrollTo(1, anchor: .bottom)
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                    withAnimation {
+                                        proxy.scrollTo(1, anchor: .center)
+                                    }
                                 }
                             }
                         }
