@@ -11,8 +11,6 @@ struct InvoiceDetailView: View {
     
     let month: Month
     
-    @Environment(\.dismiss) var dismiss
-    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -45,17 +43,7 @@ struct InvoiceDetailView: View {
         .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    HStack(spacing: 3) {
-                        Image(systemName: "chevron.left")
-                            .imageScale(.medium)
-                        Text("Zpet")
-                    }
-                    .fontWeight(.semibold)
-                    .tint(.primary)
-                }
+                BackButtonView()
             }
         }
     }

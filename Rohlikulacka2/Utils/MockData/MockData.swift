@@ -8,28 +8,35 @@
 import Foundation
 
 struct MockData {
-    static let days: [Day] = [
+    static var days: [Day] = [
+        Day(day: Calendar.current.date(byAdding: .day, value: 3, to: Date()) ?? Date(), routes: [
+            Route(date: Calendar.current.date(byAdding: .hour, value: 15, to: Date()) ?? Date(), orders: 10, tips: 10, region: "Brno", blockBonus: 150),
+            Route(date: Calendar.current.date(byAdding: .hour, value: 10, to: Date()) ?? Date(), orders: 16, tips: 230, region: "Jihlava, Humpolec, Třebíč, Telč, Havlíčkův Brod"),
+            Route(date: Calendar.current.date(byAdding: .hour, value: 5, to: Date()) ?? Date(), orders: 13, tips: 50, region: "Uherské Hradiště, Uherský Brod", blockBonus: 300),
+            Route(date: Date(), orders: 12, tips: 70, region: "Prostějov, Haňovice, Troubky", overtimeBonus: true, blockBonus: 150)
+        ]),
+        
         Day(
             day: Calendar.current.date(byAdding: .day, value: 2, to: Date()) ?? Date(),
             routes: [
-                Route(time: Calendar.current.date(byAdding: .hour, value: 10, to: Date()) ?? Date(), orders: 16, tips: 230, region: "Prostejov"),
-                Route(time: Calendar.current.date(byAdding: .hour, value: 5, to: Date()) ?? Date(), orders: 15, tips: 140),
-                Route(time: Date(), orders: 5, tips: 150, region: "Humpolec")
+                Route(date: Calendar.current.date(byAdding: .hour, value: 10, to: Date()) ?? Date(), orders: 16, tips: 230, region: "Prostejov"),
+                Route(date: Calendar.current.date(byAdding: .hour, value: 5, to: Date()) ?? Date(), orders: 15, tips: 140),
+                Route(date: Date(), orders: 5, tips: 150, region: "Humpolec")
             ]),
         
         Day(
             day: Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date(),
             routes: [
-                Route(time: Calendar.current.date(byAdding: .hour, value: 5, to: Date()) ?? Date(), orders: 9, tips: 90, region: "Svitavy"),
-                Route(time: Date(), orders: 13, tips: 150)
+                Route(date: Calendar.current.date(byAdding: .hour, value: 5, to: Date()) ?? Date(), orders: 9, tips: 90, region: "Svitavy"),
+                Route(date: Date(), orders: 13, tips: 150)
             ]),
         
         Day(
             day: Date(),
             routes: [
-                Route(time: Calendar.current.date(byAdding: .hour, value: 10, to: Date()) ?? Date(), orders: 9, tips: 90, region: "Svitavy"),
-                Route(time: Calendar.current.date(byAdding: .hour, value: 5, to: Date()) ?? Date(), orders: 15, tips: 140, region: "Jihlava"),
-                Route(time: Date(), orders: 13, tips: 150)
+                Route(date: Calendar.current.date(byAdding: .hour, value: 10, to: Date()) ?? Date(), orders: 9, tips: 90, region: "Svitavy"),
+                Route(date: Calendar.current.date(byAdding: .hour, value: 5, to: Date()) ?? Date(), orders: 15, tips: 140, region: "Jihlava"),
+                Route(date: Date(), orders: 13, tips: 150)
             ])
     ]
     
@@ -53,8 +60,8 @@ struct MockData {
     ]
     
     static let bonusPerBlock: [String] = [
-        "zadny",
-        "1 kolo",
-        "2 kola"
+        "Zadny",
+        "za 1 kolo",
+        "za 2 kola"
     ]
 }

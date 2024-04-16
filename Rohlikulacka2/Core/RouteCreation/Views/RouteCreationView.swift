@@ -62,7 +62,7 @@ struct RouteCreationView: View {
                                 .font(.title3)
                                 .fontWeight(.semibold)
                             Spacer()
-                            Image(systemName: "chevron.down")
+                            Image(.chevronDown)
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .rotationEffect(.degrees(unfoldOptionals ? 180 : 0))
@@ -91,6 +91,7 @@ struct RouteCreationView: View {
                             
                             Divider()
                             
+                            // beyond the shift
                             Toggle("Nad ramec", isOn: $isBeyond)
                                 .padding(.vertical)
                                 .tint(Color(.systemGray))
@@ -98,6 +99,7 @@ struct RouteCreationView: View {
                             
                             Divider()
                             
+                            // Bonus
                             RouteCreationCellView(selection: $bonusSelection, title: "Bonus za blok", data: MockData.bonusPerBlock)
                         }
                         

@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var showSideMenu = false
-    @State private var showSheet = false
+    @State private var showInvoiceSheet = false
     
     let month: Month = MockData.months.first!
     
@@ -35,9 +35,14 @@ struct HomeView: View {
                             .padding(.horizontal)
                         
                         ForEach(MockData.days) { day in
-                            HomeListCellView(day: day)
-                                .padding(.horizontal)
-                                .padding(.vertical, 6)
+                            NavigationLink {
+                                DayDetailView(day: day)
+                            } label: {
+                                DayCellView(day: day)
+                            }
+                            .padding(.horizontal)
+                            .padding(.vertical, 6)
+                            .foregroundStyle(.primary)   
                         }
                     }
                 }
@@ -49,7 +54,7 @@ struct HomeView: View {
                 }
             }
             
-            .fullScreenCover(isPresented: $showSheet) {
+            .fullScreenCover(isPresented: $showInvoiceSheet) {
                 RouteCreationView()
             }
             
@@ -58,9 +63,9 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        showSheet.toggle()
+                        showInvoiceSheet.toggle()
                     } label: {
-                        Image(systemName: "plus")
+                        Image(.plus)
                             .font(.title2)
                             .tint(.primary)
                     }
@@ -68,10 +73,10 @@ struct HomeView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
                         withAnimation {
-                            showSideMenu.toggle()
+                            //                            showSideMenu.toggle()
                         }
                     } label: {
-                        Image(systemName: "list.bullet")
+                        Image(.listBullet)
                             .font(.title2)
                             .tint(.primary)
                     }

@@ -27,7 +27,7 @@ struct Day: Identifiable {
     var ordersPerDay: Int {
         var orders = 0
         for route in self.routes {
-            orders += route.orders
+            orders += Int(route.orders)
         }
         return orders
     }

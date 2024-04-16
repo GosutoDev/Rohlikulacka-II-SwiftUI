@@ -20,7 +20,7 @@ struct InvoiceInfoRectView: View {
                     .font(.footnote)
                 
                 HStack {
-                    Image(systemName: "creditcard.fill")
+                    Image(.creditcardFill)
                     Text("\(month.earnPerMonth) Kc")
                 }
                     .font(.largeTitle)
@@ -33,7 +33,7 @@ struct InvoiceInfoRectView: View {
                 HStack(spacing: 3) {
                     Text("\(month.ordersPerMonth)")
                         .font(.callout)
-                    Image(systemName: "bag.fill")
+                    Image(.bagFill)
                         .imageScale(.small)
                 }
                 
@@ -42,7 +42,7 @@ struct InvoiceInfoRectView: View {
                 HStack(spacing: 3) {
                     Text("\(month.workDays)")
                         .font(.callout)
-                    Image(systemName: "calendar")
+                    Image(.calendar)
                         .imageScale(.small)
                 }
             }
