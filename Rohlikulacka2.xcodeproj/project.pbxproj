@@ -30,6 +30,7 @@
 		A8A6B3492BCEE619006A6340 /* RouteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6B3482BCEE619006A6340 /* RouteCellView.swift */; };
 		A8D972802BD65FB000C0E166 /* ListDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D9727F2BD65FAF00C0E166 /* ListDaysView.swift */; };
 		A8D972872BD6833400C0E166 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D972862BD6833400C0E166 /* ViewExtension.swift */; };
+		A8D972A92BD6AC6C00C0E166 /* VariablePayRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D972A82BD6AC6C00C0E166 /* VariablePayRate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		A8A6B3482BCEE619006A6340 /* RouteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCellView.swift; sourceTree = "<group>"; };
 		A8D9727F2BD65FAF00C0E166 /* ListDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDaysView.swift; sourceTree = "<group>"; };
 		A8D972862BD6833400C0E166 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		A8D972A82BD6AC6C00C0E166 /* VariablePayRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariablePayRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				A880F9522BC9327D00FD0DE5 /* Route.swift */,
 				A880F9592BC9386E00FD0DE5 /* Day.swift */,
 				A880F9622BC97BC900FD0DE5 /* Month.swift */,
+				A8D972A82BD6AC6C00C0E166 /* VariablePayRate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				A880F9632BC97BC900FD0DE5 /* Month.swift in Sources */,
 				A880F96D2BC9C1B600FD0DE5 /* RouteCreationCellView.swift in Sources */,
 				A8D972802BD65FB000C0E166 /* ListDaysView.swift in Sources */,
+				A8D972A92BD6AC6C00C0E166 /* VariablePayRate.swift in Sources */,
 				A880F9392BC923C100FD0DE5 /* Rohlikulacka2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
