@@ -25,9 +25,9 @@ struct RouteCreationCellView<T: Hashable>: View {
                 .font(.headline)
             Spacer()
             Menu {
-                ForEach(data, id: \.self) { data in
-                    Button("\(data)\(insertCrown)") {
-                        selection = data
+                Picker("", selection: $selection) {
+                    ForEach(data, id: \.self) { data in
+                        Text("\(data)\(insertCrown)")
                     }
                 }
             } label: {
@@ -47,3 +47,4 @@ struct RouteCreationCellView<T: Hashable>: View {
 #Preview {
     RouteCreationCellView(selection: .constant(1), title: "Ahoj", data: [1,2])
 }
+

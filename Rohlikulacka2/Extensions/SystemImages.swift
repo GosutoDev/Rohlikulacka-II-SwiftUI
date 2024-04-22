@@ -18,6 +18,7 @@ enum Symbol: String {
     case chevronUp = "chevron.up"
     case chevronRight = "chevron.right"
     case chevronDown = "chevron.down"
+    case variablePayRate = "dollarsign.arrow.circlepath"
 }
 
 

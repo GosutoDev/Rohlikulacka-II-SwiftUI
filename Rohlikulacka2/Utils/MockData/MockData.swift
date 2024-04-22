@@ -91,8 +91,10 @@ struct MockData {
             ])
     ]
     
+    static let variablePayRate = VariablePayRate()
+    
     static let months: [Month] = [
-        Month(days: days, month: Date())
+        Month(days: days, month: Date(), variablePayRate: variablePayRate)
     ]
     
     static let regions: [String] = [

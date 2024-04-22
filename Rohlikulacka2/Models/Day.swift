@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Day: Identifiable {
+struct Day: Identifiable, Equatable, Hashable {
     var id: String = UUID().uuidString
     var day: Date
     var routes: [Route]

@@ -8,19 +8,36 @@
 import SwiftUI
 
 struct SideMenuView: View {
+    
+    @Binding var navPath: NavigationPath
+    @Binding var showSideMenu: Bool
+    
     var body: some View {
-        HStack {
-            Rectangle()
-                .frame(width: UIScreen.main.bounds.width * 0.8)
-                .ignoresSafeArea()
-            
-            Spacer()
+        NavigationStack {
+            ScrollView {
+                Button("Prehled sluzeb") {
+                    showSideMenu.toggle()
+                    navPath.append(MockData.months[0])
+                }
+
+            }
+                .navigationTitle("Menu")
         }
-        .background(.clear)
-        .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .leading)))
+        
+        
+        .frame(width: getRect().width - 90)
+        .frame(maxHeight: .infinity)
+        .background(
+            Color.primary
+                .opacity(0.04)
+                .ignoresSafeArea(.container, edges: .vertical)
+        )
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
-#Preview {
-    SideMenuView()
-}
+//#Preview {
+//    SideMenuView(navPath: .constant("hello")
+//}
+
+

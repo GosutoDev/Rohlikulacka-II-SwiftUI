@@ -29,6 +29,7 @@
 		A880F9AB2BCE986100FD0DE5 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9AA2BCE986100FD0DE5 /* RouteView.swift */; };
 		A8A6B3492BCEE619006A6340 /* RouteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6B3482BCEE619006A6340 /* RouteCellView.swift */; };
 		A8D972802BD65FB000C0E166 /* ListDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D9727F2BD65FAF00C0E166 /* ListDaysView.swift */; };
+		A8D972872BD6833400C0E166 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D972862BD6833400C0E166 /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		A880F9AA2BCE986100FD0DE5 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		A8A6B3482BCEE619006A6340 /* RouteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCellView.swift; sourceTree = "<group>"; };
 		A8D9727F2BD65FAF00C0E166 /* ListDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDaysView.swift; sourceTree = "<group>"; };
+		A8D972862BD6833400C0E166 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +134,8 @@
 		A880F9482BC9246D00FD0DE5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A880F9752BCD344C00FD0DE5 /* SystemImages */,
+				A8D972862BD6833400C0E166 /* ViewExtension.swift */,
+				A880F9762BCD346000FD0DE5 /* SystemImages.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,14 +266,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		A880F9752BCD344C00FD0DE5 /* SystemImages */ = {
-			isa = PBXGroup;
-			children = (
-				A880F9762BCD346000FD0DE5 /* SystemImages.swift */,
-			);
-			path = SystemImages;
-			sourceTree = "<group>";
-		};
 		A880F9A82BCE984D00FD0DE5 /* Route */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +373,7 @@
 				A880F93B2BC923C100FD0DE5 /* ContentView.swift in Sources */,
 				A880F9612BC96DA700FD0DE5 /* SideMenuView.swift in Sources */,
 				A880F9582BC9345100FD0DE5 /* InvoiceInfoRectView.swift in Sources */,
+				A8D972872BD6833400C0E166 /* ViewExtension.swift in Sources */,
 				A880F9742BCD314100FD0DE5 /* BackButtonView.swift in Sources */,
 				A880F9632BC97BC900FD0DE5 /* Month.swift in Sources */,
 				A880F96D2BC9C1B600FD0DE5 /* RouteCreationCellView.swift in Sources */,

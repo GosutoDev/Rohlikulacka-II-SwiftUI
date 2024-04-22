@@ -39,14 +39,14 @@ import Foundation
 //    }
 //}
 
-struct Route: Identifiable {
+struct Route: Identifiable, Equatable, Hashable {
     var id: String = UUID().uuidString
     var date: Date
-    var orders: Double
-    var tips: Double
+    var orders: Int
+    var tips: Int
     var region: String?
     var overtimeBonus: Bool?
-    var blockBonus: Double?
+    var blockBonus: Int?
     
 //    var variableOrderPayRate: VariablePayRate
     
@@ -71,11 +71,11 @@ struct Route: Identifiable {
     
     // mock still
     var earnPerRoute: Int {
-        return Int(self.orders * 60.0)
+        return self.orders * 60
     }
 }
 
-enum PayRate: Double {
+enum PayRate: Int, CaseIterable, Equatable {
     case A = 7
     case B = 5
     case C = 3
@@ -83,18 +83,33 @@ enum PayRate: Double {
 }
 
 // how many days
-enum Attendance: Double {
+enum Attendance: Double, CaseIterable, Equatable, Hashable {
     case fullSixteen = 7
     case fullTen = 5
     case sixteenMinusOne = 3.5
     case tenMinusOne = 2.5
     case twoBlockUndelivered = 0
+    
+    var displayString: String {
+        switch self {
+        case .fullSixteen:
+            return "Dodrzena garance 16"
+        case .fullTen:
+            return "Dodrzena garance 10"
+        case .sixteenMinusOne:
+            return "16 - 1"
+        case .tenMinusOne:
+            return "10 - 1"
+        case .twoBlockUndelivered:
+            return "-2 dny"
+        }
+    }
 }
 
-struct VariablePayRate {
-    var delay: Double = PayRate.A.rawValue
-    var review: Double = PayRate.A.rawValue
-    var drivingStyle: Double = PayRate.A.rawValue
+struct VariablePayRate: Equatable, Hashable {
+    var delay: Int = PayRate.A.rawValue
+    var review: Int = PayRate.A.rawValue
+    var drivingStyle: Int = PayRate.A.rawValue
     var attendance: Double = Attendance.fullSixteen.rawValue
 }
 

@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct Month: Identifiable {
+struct Month: Identifiable, Hashable {
     var id: String = UUID().uuidString
     var days: [Day]
     var month: Date
+    var variablePayRate: VariablePayRate
     
     var displayHomeMonth: String {
         let month = self.month.formatted(
