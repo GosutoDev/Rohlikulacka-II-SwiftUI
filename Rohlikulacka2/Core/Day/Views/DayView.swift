@@ -8,7 +8,7 @@
 import SwiftUI
 import SwipeActions
 
-struct DayCellView: View {
+struct DayView: View {
     
     let day: Day
     
@@ -91,6 +91,6 @@ struct DayCellView: View {
 }
 
 #Preview {
-    DayCellView(day: MockData.days[1])
+    DayView(day: MockData.days[1])
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 enum Symbol: String {
-    case  bagFill = "bag.fill"
+    case bagFill = "bag.fill"
     case plus = "plus"
     case listBullet = "list.bullet"
     case creditcardFill = "creditcard.fill"

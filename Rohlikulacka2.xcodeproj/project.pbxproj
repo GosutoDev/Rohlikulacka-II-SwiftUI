@@ -16,7 +16,7 @@
 		A880F9562BC9332A00FD0DE5 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9552BC9332A00FD0DE5 /* MockData.swift */; };
 		A880F9582BC9345100FD0DE5 /* InvoiceInfoRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9572BC9345100FD0DE5 /* InvoiceInfoRectView.swift */; };
 		A880F95A2BC9386E00FD0DE5 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9592BC9386E00FD0DE5 /* Day.swift */; };
-		A880F95D2BC9500600FD0DE5 /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F95C2BC9500600FD0DE5 /* DayCellView.swift */; };
+		A880F95D2BC9500600FD0DE5 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F95C2BC9500600FD0DE5 /* DayView.swift */; };
 		A880F9612BC96DA700FD0DE5 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9602BC96DA700FD0DE5 /* SideMenuView.swift */; };
 		A880F9632BC97BC900FD0DE5 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9622BC97BC900FD0DE5 /* Month.swift */; };
 		A880F9672BC987DD00FD0DE5 /* InvoiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9662BC987DD00FD0DE5 /* InvoiceDetailView.swift */; };
@@ -26,7 +26,9 @@
 		A880F9742BCD314100FD0DE5 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9732BCD314100FD0DE5 /* BackButtonView.swift */; };
 		A880F9772BCD346100FD0DE5 /* SystemImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9762BCD346000FD0DE5 /* SystemImages.swift */; };
 		A880F9972BCE875600FD0DE5 /* SwipeActions in Frameworks */ = {isa = PBXBuildFile; productRef = A880F9962BCE875600FD0DE5 /* SwipeActions */; };
-		A880F9AB2BCE986100FD0DE5 /* RouteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9AA2BCE986100FD0DE5 /* RouteCellView.swift */; };
+		A880F9AB2BCE986100FD0DE5 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F9AA2BCE986100FD0DE5 /* RouteView.swift */; };
+		A8A6B3492BCEE619006A6340 /* RouteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A6B3482BCEE619006A6340 /* RouteCellView.swift */; };
+		A8D972802BD65FB000C0E166 /* ListDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D9727F2BD65FAF00C0E166 /* ListDaysView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,7 @@
 		A880F9552BC9332A00FD0DE5 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		A880F9572BC9345100FD0DE5 /* InvoiceInfoRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceInfoRectView.swift; sourceTree = "<group>"; };
 		A880F9592BC9386E00FD0DE5 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
-		A880F95C2BC9500600FD0DE5 /* DayCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCellView.swift; sourceTree = "<group>"; };
+		A880F95C2BC9500600FD0DE5 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		A880F9602BC96DA700FD0DE5 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		A880F9622BC97BC900FD0DE5 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		A880F9662BC987DD00FD0DE5 /* InvoiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceDetailView.swift; sourceTree = "<group>"; };
@@ -49,7 +51,9 @@
 		A880F96E2BCD2FD200FD0DE5 /* DayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailView.swift; sourceTree = "<group>"; };
 		A880F9732BCD314100FD0DE5 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		A880F9762BCD346000FD0DE5 /* SystemImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImages.swift; sourceTree = "<group>"; };
-		A880F9AA2BCE986100FD0DE5 /* RouteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCellView.swift; sourceTree = "<group>"; };
+		A880F9AA2BCE986100FD0DE5 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
+		A8A6B3482BCEE619006A6340 /* RouteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCellView.swift; sourceTree = "<group>"; };
+		A8D9727F2BD65FAF00C0E166 /* ListDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDaysView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,8 +248,9 @@
 		A880F9712BCD30A300FD0DE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A880F95C2BC9500600FD0DE5 /* DayCellView.swift */,
+				A880F95C2BC9500600FD0DE5 /* DayView.swift */,
 				A880F96E2BCD2FD200FD0DE5 /* DayDetailView.swift */,
+				A8D9727F2BD65FAF00C0E166 /* ListDaysView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,7 +282,8 @@
 		A880F9A92BCE985900FD0DE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A880F9AA2BCE986100FD0DE5 /* RouteCellView.swift */,
+				A880F9AA2BCE986100FD0DE5 /* RouteView.swift */,
+				A8A6B3482BCEE619006A6340 /* RouteCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,10 +365,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A880F95A2BC9386E00FD0DE5 /* Day.swift in Sources */,
-				A880F9AB2BCE986100FD0DE5 /* RouteCellView.swift in Sources */,
+				A880F9AB2BCE986100FD0DE5 /* RouteView.swift in Sources */,
 				A880F96B2BC98C6400FD0DE5 /* RouteCreationView.swift in Sources */,
 				A880F9672BC987DD00FD0DE5 /* InvoiceDetailView.swift in Sources */,
-				A880F95D2BC9500600FD0DE5 /* DayCellView.swift in Sources */,
+				A8A6B3492BCEE619006A6340 /* RouteCellView.swift in Sources */,
+				A880F95D2BC9500600FD0DE5 /* DayView.swift in Sources */,
 				A880F9562BC9332A00FD0DE5 /* MockData.swift in Sources */,
 				A880F9502BC924C500FD0DE5 /* HomeView.swift in Sources */,
 				A880F96F2BCD2FD200FD0DE5 /* DayDetailView.swift in Sources */,
@@ -374,6 +381,7 @@
 				A880F9742BCD314100FD0DE5 /* BackButtonView.swift in Sources */,
 				A880F9632BC97BC900FD0DE5 /* Month.swift in Sources */,
 				A880F96D2BC9C1B600FD0DE5 /* RouteCreationCellView.swift in Sources */,
+				A8D972802BD65FB000C0E166 /* ListDaysView.swift in Sources */,
 				A880F9392BC923C100FD0DE5 /* Rohlikulacka2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

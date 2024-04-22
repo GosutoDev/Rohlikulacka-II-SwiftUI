@@ -35,7 +35,8 @@ struct DayDetailView: View {
         ScrollView {
             ForEach(day.routes) { route in
                 if showingStylesSwipeToDelete {
-                    RouteCellView(route: route, delete: $showingStylesSwipeToDelete)
+                    RouteView(route: route, delete: $showingStylesSwipeToDelete)
+                        .padding(.vertical, 5)
                 }
                 
             }
@@ -43,6 +44,7 @@ struct DayDetailView: View {
             .shadow(radius: 2)
         }
         .navigationTitle(editDate ? "" : day.displayDate)
+        .navigationBarTitleDisplayMode(editDate ? .inline : .large)
         .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {

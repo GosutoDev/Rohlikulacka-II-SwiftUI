@@ -40,7 +40,8 @@ struct InvoiceDetailView: View {
                 .padding(.horizontal)
             }
         }
-        .navigationBarBackButtonHidden()
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 BackButtonView()

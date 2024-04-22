@@ -27,24 +27,7 @@ struct HomeView: View {
                     Divider()
                         .padding(.horizontal)
                     
-                    LazyVStack(alignment: .leading) {
-                        
-                        Text("Odvezené trasy")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .padding(.horizontal)
-                        
-                        ForEach(MockData.days) { day in
-                            NavigationLink {
-                                DayDetailView(day: day)
-                            } label: {
-                                DayCellView(day: day)
-                            }
-                            .padding(.horizontal)
-                            .padding(.vertical, 6)
-                            .foregroundStyle(.primary)   
-                        }
-                    }
+                    ListDaysView()
                 }
                 if showSideMenu {
                     Color.primary.opacity(0.3)
