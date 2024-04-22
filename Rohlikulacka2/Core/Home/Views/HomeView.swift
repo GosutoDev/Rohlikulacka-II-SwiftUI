@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var showSideMenu = false
-    @State private var showInvoiceSheet = false
+    @State private var showRouteCreationSheet = false
     
     let month: Month = MockData.months.first!
     
@@ -27,7 +27,7 @@ struct HomeView: View {
                     Divider()
                         .padding(.horizontal)
                     
-                    ListDaysView()
+                    ListDaysView(showSheet: $showRouteCreationSheet)
                 }
                 if showSideMenu {
                     Color.primary.opacity(0.3)
@@ -37,7 +37,7 @@ struct HomeView: View {
                 }
             }
             
-            .fullScreenCover(isPresented: $showInvoiceSheet) {
+            .fullScreenCover(isPresented: $showRouteCreationSheet) {
                 RouteCreationView()
             }
             
@@ -46,7 +46,7 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        showInvoiceSheet.toggle()
+                        showRouteCreationSheet.toggle()
                     } label: {
                         Image(.plus)
                             .font(.title2)

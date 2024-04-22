@@ -75,7 +75,6 @@ struct Route: Identifiable {
     }
 }
 
-
 enum PayRate: Double {
     case A = 7
     case B = 5
@@ -83,6 +82,7 @@ enum PayRate: Double {
     case D = 0
 }
 
+// how many days
 enum Attendance: Double {
     case fullSixteen = 7
     case fullTen = 5
@@ -97,3 +97,4 @@ struct VariablePayRate {
     var drivingStyle: Double = PayRate.A.rawValue
     var attendance: Double = Attendance.fullSixteen.rawValue
 }
+
