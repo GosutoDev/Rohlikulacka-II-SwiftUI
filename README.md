@@ -19,8 +19,10 @@ The code that I "write" is was rather copy and paste. So I wanted to rebuild the
 
 ## Screens
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-04-23 at 21 01 54](https://github.com/GosutoDev/Rohlikulacka-II-SwiftUI/assets/130918563/634fb323-f80a-41f4-8d35-801cf21c739b)
-![Simulator Screenshot - iPhone 15 Pro - 2024-04-23 at 21 02 12](https://github.com/GosutoDev/Rohlikulacka-II-SwiftUI/assets/130918563/1276dacd-e40c-4e61-8d7c-92f589f26361)
+![simulator_screenshot_24C3B099-924E-4917-98A2-A4A5687EFE80](https://github.com/GosutoDev/Rohlikulacka-II-SwiftUI/assets/130918563/980b5262-639b-4ccc-b4b4-0467c73368f9)
+
+![simulator_screenshot_0A6032BF-7F04-4716-ACFE-E467B3037470](https://github.com/GosutoDev/Rohlikulacka-II-SwiftUI/assets/130918563/9fbc7ab6-9f55-4a04-89a8-7617e80057e9)
+
 
 
 ## Languages, Frameworks or Libraries Used
