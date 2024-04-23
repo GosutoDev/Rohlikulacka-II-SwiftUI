@@ -19,9 +19,7 @@ The code that I "write" is was rather copy and paste. So I wanted to rebuild the
 
 ## Screens
 
-![simulator_screenshot_24C3B099-924E-4917-98A2-A4A5687EFE80](https://github.com/GosutoDev/Rohlikulacka-II-SwiftUI/assets/130918563/980b5262-639b-4ccc-b4b4-0467c73368f9)
-
-![simulator_screenshot_0A6032BF-7F04-4716-ACFE-E467B3037470](https://github.com/GosutoDev/Rohlikulacka-II-SwiftUI/assets/130918563/9fbc7ab6-9f55-4a04-89a8-7617e80057e9)
+![simulator_screenshot_24C3B099-924E-4917-98A2-A4A5687EFE80](https://github.com/GosutoDev/Rohlikulacka-II-SwiftUI/assets/130918563/980b5262-639b-4ccc-b4b4-0467c73368f9) ![simulator_screenshot_0A6032BF-7F04-4716-ACFE-E467B3037470](https://github.com/GosutoDev/Rohlikulacka-II-SwiftUI/assets/130918563/9fbc7ab6-9f55-4a04-89a8-7617e80057e9)
 
 
 
