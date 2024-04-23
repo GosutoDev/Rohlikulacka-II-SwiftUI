@@ -10,12 +10,14 @@ import Foundation
 
 struct RouteCreationView: View {
     
+    let month: Month
+    
     @State private var dateSelection = Date()
     @State private var orderSelection: Int = 10
     @State private var tipSelection: Int = 100
     @State private var regionSelection: String = "Brno"
     @State private var isBeyond: Bool = false
-    @State private var bonusSelection: String = "zadny"
+    @State private var bonusSelection: BlockBonus = .none
     
     @State private var unfoldOptionals = false
     
@@ -52,9 +54,6 @@ struct RouteCreationView: View {
                     .shadow(radius: 2)
                     .padding()
                     
-                    
-                    
-                    
                     // Optional setts
                     VStack(alignment: .leading) {
                         HStack {
@@ -87,7 +86,10 @@ struct RouteCreationView: View {
                             Divider()
                             
                             //regions
-                            RouteCreationCellView(selection: $regionSelection, title: "Region", data: MockData.regions)
+                            RouteCreationCellView(
+                                selection: $regionSelection,
+                                title: "Region",
+                                data: MockData.regions)
                             
                             Divider()
                             
@@ -100,7 +102,10 @@ struct RouteCreationView: View {
                             Divider()
                             
                             // Bonus
-                            RouteCreationCellView(selection: $bonusSelection, title: "Bonus za blok", data: MockData.bonusPerBlock)
+                            RouteCreationCellView(
+                                selection: $bonusSelection,
+                                title: "Bonus za blok", 
+                                data: BlockBonus.allCases )
                         }
                         
                     }
@@ -111,7 +116,8 @@ struct RouteCreationView: View {
                     .padding(.horizontal)
                     
                     Button {
-                        
+                        addDayAndRoute(month)
+                        dismiss()
                     } label: {
                         Text("Potvrdit")
                             .font(.title3)
@@ -140,6 +146,7 @@ struct RouteCreationView: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Potvrdit") {
+                        addDayAndRoute(month)
                         dismiss()
                     }
                     .fontWeight(.semibold)
@@ -150,6 +157,41 @@ struct RouteCreationView: View {
     }
 }
 
+extension RouteCreationView {
+    private func addDayAndRoute(_ month: Month) {
+        let formattedDateSelection = dateSelection.formatted(
+            .dateTime
+                .locale(Locale(identifier: "cs"))
+                .weekday(.wide)
+                .day(.defaultDigits)
+                .month(.wide)
+        )
+            .capitalized
+        
+        let route = Route(
+            date: dateSelection,
+            orders: orderSelection,
+            tips: tipSelection,
+            region: regionSelection,
+            overtimeBonus: isBeyond,
+            blockBonus: bonusSelection)
+        
+        if !month.days.contains(where: { $0.displayDate == formattedDateSelection }) {
+            let day = Day(
+                day: dateSelection,
+                routes: [route])
+            month.days.insert(day, at: 0)
+        } else {
+            guard let index = month.days.firstIndex(where: { $0.displayDate == formattedDateSelection }) else { return }
+            month.days[index].routes.insert(route, at: 0)
+
+        }
+    }
+}
+
 #Preview {
-    RouteCreationView()
+    let preview = Preview()
+    preview.addExamples(MockData.months)
+    return ContentView()
+        .modelContainer(preview.container)
 }

@@ -6,49 +6,42 @@
 //
 
 import Foundation
+import SwiftData
 
-/*
- "Brno",
- "Uherské Hradiště, Uherský Brod",
- "Jihlava, Humpolec, Třebíč, Telč, Havlíčkův Brod",
- "Svitavy, Polička, Moravská Třebová, Mohelnice",
- "Břeclav, Hodonín, Mikulov, Valtice, Lanžhot",
- "Znojmo, Moravský Krumlov",
- "Prostějov, Haňovice, Troubky",
- "Staré Hutě, Zástřily, Roštín",
- "Žďár nad Sázavou, Velká Bíteš",
- "Kroměříž, Kojetín, Zdounky",
- "Česká Třebová, Lanškroun, Zábřeh",
- "Ivanovice na Hané"
- */
+enum BlockBonus: String, CaseIterable, Codable {
+    case none = "Zadny"
+    case oneRoute = "1 kolo"
+    case twoRoute = "2 kola"
+    
+    var getPayRate: Int {
+        switch self {
+        case .none:
+            0
+        case .oneRoute:
+            150
+        case .twoRoute:
+            300
+        }
+    }
+}
 
-//enum Regions: String, CaseIterable {
-//    case one = "Brno"
-//    case two
-//    case three
-//    
-//    func getRegionString() -> String {
-//        switch self {
-//        case .one:
-//            <#code#>
-//        case .two:
-//            <#code#>
-//        case .three:
-//            <#code#>
-//        }
-//    }
-//}
-
-struct Route: Identifiable, Equatable, Hashable {
-    var id: String = UUID().uuidString
+@Model
+class Route: Equatable, Hashable {
     var date: Date
     var orders: Int
     var tips: Int
     var region: String?
     var overtimeBonus: Bool?
-    var blockBonus: Int?
-    
-//    var variableOrderPayRate: VariablePayRate
+    var blockBonus: BlockBonus?
+
+    init(date: Date, orders: Int, tips: Int, region: String? = nil, overtimeBonus: Bool? = nil, blockBonus: BlockBonus? = nil) {
+        self.date = date
+        self.orders = orders
+        self.tips = tips
+        self.region = region
+        self.overtimeBonus = overtimeBonus
+        self.blockBonus = blockBonus
+    }
     
     var displayTime: String {
         let time = date.formatted(
@@ -60,7 +53,7 @@ struct Route: Identifiable, Equatable, Hashable {
     }
     
     var overtimeBonusPayRate: Int {
-        guard let overtimeBonus = self.overtimeBonus else { return 0 }
+        guard let overtimeBonus = overtimeBonus else { return 0 }
         guard overtimeBonus else { return 0 }
         return 250
     }
@@ -71,7 +64,7 @@ struct Route: Identifiable, Equatable, Hashable {
     
     // mock still
     var earnPerRoute: Int {
-        return self.orders * 60
+        return (self.orders ) * 60
     }
 }
 

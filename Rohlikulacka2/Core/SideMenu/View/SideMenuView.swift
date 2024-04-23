@@ -13,7 +13,7 @@ struct SideMenuView: View {
     @Binding var showSideMenu: Bool
     
     var body: some View {
-        NavigationStack {
+      
             ScrollView {
                 Button("Prehled sluzeb") {
                     showSideMenu.toggle()
@@ -21,8 +21,8 @@ struct SideMenuView: View {
                 }
 
             }
-                .navigationTitle("Menu")
-        }
+                
+        
         
         
         .frame(width: getRect().width - 90)

@@ -6,14 +6,20 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Day: Identifiable, Equatable, Hashable {
-    var id: String = UUID().uuidString
+@Model
+class Day: Equatable, Hashable {
     var day: Date
-    var routes: [Route]
+    @Relationship(deleteRule: .cascade) var routes: [Route]
+    
+    init(day: Date, routes: [Route]) {
+        self.day = day
+        self.routes = routes
+    }
     
     var displayDate: String {
-        let day = self.day.formatted(
+        let dayString = day.formatted(
             .dateTime
                 .locale(Locale(identifier: "cs"))
                 .weekday(.wide)
@@ -21,12 +27,12 @@ struct Day: Identifiable, Equatable, Hashable {
                 .month(.wide)
         )
             .capitalized
-        return day
+        return dayString
     }
     
     var ordersPerDay: Int {
         var orders = 0
-        for route in self.routes {
+        for route in routes {
             orders += Int(route.orders)
         }
         return orders
@@ -34,7 +40,7 @@ struct Day: Identifiable, Equatable, Hashable {
     
     var earnPerDay: Int {
         var earn = 0
-        for route in self.routes {
+        for route in routes {
             earn += route.earnPerRoute
         }
         return earn

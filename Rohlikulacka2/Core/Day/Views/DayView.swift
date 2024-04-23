@@ -7,10 +7,16 @@
 
 import SwiftUI
 import SwipeActions
+import SwiftData
 
 struct DayView: View {
     
     let day: Day
+    let month: Month
+    
+    @Environment(\.modelContext) private var context
+    
+    @State private var showing = true
     
     var body: some View {
         SwipeView {
@@ -43,7 +49,7 @@ struct DayView: View {
                         .fontWeight(.semibold)
                         
                         Divider()
-                    
+                        
                     }
                     .padding(.vertical, 2)
                 }
@@ -69,15 +75,16 @@ struct DayView: View {
             .background(Color(.systemGray6))
             .clipShape(.rect(cornerRadius: 8))
             .shadow(radius: 2)
+            
+            .onAppear {
+                print(day.routes.count)
+            }
+            
         } trailingActions: { _ in
             SwipeAction(systemImage: "trash", backgroundColor: .red) {
                 withAnimation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 1)) {
-                }
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    withAnimation(.spring(response: 0.6, dampingFraction: 1, blendDuration: 1)) {
-                        
-                    }
+                    deleteDay(day)
+                    //                        showing.toggle()
                 }
             }
             .allowSwipeToTrigger()
@@ -90,7 +97,21 @@ struct DayView: View {
     }
 }
 
-#Preview {
-    DayView(day: MockData.days[1])
+extension DayView {
+    func deleteDay(_ day: Day) {
+        let monthDays = month.days
+        if !monthDays.isEmpty {
+            if monthDays.contains(day), let index = monthDays.firstIndex(where: { $0.id == day.id }) {
+                month.days.remove(at: index)
+                context.delete(day)
+            }
+        }
+        
+    }
 }
+
+#Preview {
+    DayView(day: MockData.days[1], month: MockData.months[0])
+}
+
 

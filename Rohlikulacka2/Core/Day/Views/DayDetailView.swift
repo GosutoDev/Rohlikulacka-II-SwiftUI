@@ -7,13 +7,15 @@
 
 import SwiftUI
 import SwipeActions
+import SwiftData
 
 struct DayDetailView: View {
     
-    @State var showingStylesSwipeToDelete = true
     @State private var editDate = false
     @State private var datePicker = Date()
     
+    @Query(sort: \Route.date, order: .reverse) private var routes: [Route]
+    var month: Month
     var day: Day
     
     var body: some View {
@@ -33,12 +35,9 @@ struct DayDetailView: View {
         }
         
         ScrollView {
-            ForEach(day.routes) { route in
-                if showingStylesSwipeToDelete {
-                    RouteView(route: route, delete: $showingStylesSwipeToDelete)
-                        .padding(.vertical, 5)
-                }
-                
+            ForEach(routes) { route in
+                RouteView(month: month, day: day, route: route)
+                    .padding(.vertical, 5)
             }
             .padding(.horizontal)
             .shadow(radius: 2)
@@ -65,6 +64,8 @@ struct DayDetailView: View {
 
 #Preview {
     NavigationStack {
-        DayDetailView(day: MockData.days[0])
+        DayDetailView(month: MockData.months[0], day: MockData.days[0])
     }
 }
+
+

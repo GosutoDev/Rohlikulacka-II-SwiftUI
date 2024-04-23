@@ -6,12 +6,18 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Month: Identifiable, Hashable {
-    var id: String = UUID().uuidString
-    var days: [Day]
+@Model
+class Month: Hashable {
+    @Relationship(deleteRule: .cascade) var days: [Day]
     var month: Date
-    var variablePayRate: VariablePayRate
+    @Transient var variablePayRate = VariablePayRate()
+    
+    init(days: [Day], month: Date) {
+        self.days = days
+        self.month = month
+    }
     
     var displayHomeMonth: String {
         let month = self.month.formatted(
@@ -52,6 +58,6 @@ struct Month: Identifiable, Hashable {
     }
     
     var workDays: Int {
-        days.count
+        return days.count
     }
 }

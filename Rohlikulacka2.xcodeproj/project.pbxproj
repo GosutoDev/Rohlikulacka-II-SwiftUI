@@ -31,6 +31,7 @@
 		A8D972802BD65FB000C0E166 /* ListDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D9727F2BD65FAF00C0E166 /* ListDaysView.swift */; };
 		A8D972872BD6833400C0E166 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D972862BD6833400C0E166 /* ViewExtension.swift */; };
 		A8D972A92BD6AC6C00C0E166 /* VariablePayRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D972A82BD6AC6C00C0E166 /* VariablePayRate.swift */; };
+		A8E21D9C2BD7FDCD00065993 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E21D9B2BD7FDCD00065993 /* Preview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		A8D9727F2BD65FAF00C0E166 /* ListDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDaysView.swift; sourceTree = "<group>"; };
 		A8D972862BD6833400C0E166 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		A8D972A82BD6AC6C00C0E166 /* VariablePayRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariablePayRate.swift; sourceTree = "<group>"; };
+		A8E21D9B2BD7FDCD00065993 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				A880F9542BC9331B00FD0DE5 /* MockData */,
+				A8E21D9B2BD7FDCD00065993 /* Preview.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			files = (
 				A880F95A2BC9386E00FD0DE5 /* Day.swift in Sources */,
 				A880F9AB2BCE986100FD0DE5 /* RouteView.swift in Sources */,
+				A8E21D9C2BD7FDCD00065993 /* Preview.swift in Sources */,
 				A880F96B2BC98C6400FD0DE5 /* RouteCreationView.swift in Sources */,
 				A880F9672BC987DD00FD0DE5 /* InvoiceDetailView.swift in Sources */,
 				A8A6B3492BCEE619006A6340 /* RouteCellView.swift in Sources */,
@@ -526,7 +530,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -562,7 +566,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

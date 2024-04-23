@@ -17,7 +17,7 @@ struct MockData {
                     orders: 10,
                     tips: 10,
                     region: "Brno",
-                    blockBonus: 150),
+                    blockBonus: BlockBonus.oneRoute),
                 Route(
                     date: setDateHour(plus: 4),
                     orders: 16,
@@ -28,14 +28,14 @@ struct MockData {
                     orders: 13,
                     tips: 50,
                     region: "Uherské Hradiště, Uherský Brod",
-                    blockBonus: 300),
+                    blockBonus: BlockBonus.twoRoute),
                 Route(
                     date: Date(),
                     orders: 12,
                     tips: 70,
                     region: "Prostějov, Haňovice, Troubky",
                     overtimeBonus: true,
-                    blockBonus: 150)
+                    blockBonus: BlockBonus.oneRoute)
             ]),
         
         Day(
@@ -49,7 +49,8 @@ struct MockData {
                 Route(
                     date: setDateHour(plus: 2),
                     orders: 15,
-                    tips: 140),
+                    tips: 140, 
+                    region: "Brno"),
                 Route(
                     date: Date(),
                     orders: 5,
@@ -94,7 +95,7 @@ struct MockData {
     static let variablePayRate = VariablePayRate()
     
     static let months: [Month] = [
-        Month(days: days, month: Date(), variablePayRate: variablePayRate)
+        Month(days: days, month: Date())
     ]
     
     static let regions: [String] = [

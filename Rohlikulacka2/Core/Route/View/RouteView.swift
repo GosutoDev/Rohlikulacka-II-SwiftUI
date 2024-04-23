@@ -10,8 +10,12 @@ import SwipeActions
 
 struct RouteView: View {
     
+    @Bindable var month: Month
+    @Bindable var day: Day
     let route: Route
-    @Binding var delete: Bool
+    
+    @Environment(\.modelContext) private var context
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         SwipeView {
@@ -31,19 +35,19 @@ struct RouteView: View {
                 
                 Divider()
                 
-                RouteCellView(title: "Za zakazky", price: Int(route.orders * 30))
+                RouteCellView(title: "Za zakazky", price: Int((route.orders ) * 30))
                 
                 Divider()
                 
-                RouteCellView(title: "Spropitne", price: Int(route.tips))
+                RouteCellView(title: "Spropitne", price: Int(route.tips ))
                 
-                if route.region ?? "Brno" != "Brno" {
+                if route.region != "Brno" {
                     
                     Divider()
                     
                     RouteCellView(title: "Region", price: Int(route.regionPrice))
                     
-                    if route.overtimeBonus ?? false == true {
+                    if route.overtimeBonus == true {
                         
                         Divider()
                         
@@ -52,11 +56,11 @@ struct RouteView: View {
                     
                 }
                 
-                if route.blockBonus ?? 0 != 0 {
+                if route.blockBonus != BlockBonus.none {
                     
                     Divider()
                     
-                    RouteCellView(title: "Bonus za blok", price: Int(route.blockBonus ?? 0))
+                    RouteCellView(title: "Bonus za blok", price: route.blockBonus?.getPayRate ?? 0)
                 }
                 
                 VStack {
@@ -71,7 +75,7 @@ struct RouteView: View {
                         Text("\(route.earnPerRoute) Kc")
                             .foregroundStyle(.green)
                     }
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 .font(.title3)
                 .fontWeight(.semibold)
@@ -84,13 +88,7 @@ struct RouteView: View {
         } trailingActions: { _ in
             SwipeAction(systemImage: "trash", backgroundColor: .red) {
                 withAnimation(.spring(response: 0.3, dampingFraction: 1, blendDuration: 1)) {
-                    delete = false
-                }
-
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    withAnimation(.spring(response: 0.6, dampingFraction: 1, blendDuration: 1)) {
-                        delete = true
-                    }
+                    deleteRoute(route)
                 }
             }
             .allowSwipeToTrigger()
@@ -103,6 +101,26 @@ struct RouteView: View {
     }
 }
 
+extension RouteView {
+    func deleteRoute(_ route: Route) {
+        let dayRoutes = day.routes
+        if !dayRoutes.isEmpty {
+            if dayRoutes.contains(route), let index = dayRoutes.firstIndex(where: { $0.id == route.id }) {
+                day.routes.remove(at: index)
+                context.delete(route)
+            }
+        }
+        let monthDays = month.days
+        if dayRoutes.count == 1 {   
+            if monthDays.contains(day), let index = monthDays.firstIndex(where: { $0.id == day.id }) {
+                month.days.remove(at: index)
+                context.delete(day)
+                dismiss()
+            }
+        }
+    }
+}
+
 #Preview {
-    RouteView(route: MockData.days[0].routes[3], delete: .constant(true))
+    RouteView(month: MockData.months[0], day: MockData.days[1], route: MockData.days[0].routes[3])
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 enum PayRate: Int, CaseIterable, Equatable {
     case A = 7
@@ -38,9 +39,21 @@ enum Attendance: Double, CaseIterable, Equatable, Hashable {
     }
 }
 
-struct VariablePayRate: Equatable, Hashable {
+@Model
+class VariablePayRate: Equatable, Hashable {
     var delay: Int = PayRate.A.rawValue
     var review: Int = PayRate.A.rawValue
     var drivingStyle: Int = PayRate.A.rawValue
     var attendance: Double = Attendance.fullSixteen.rawValue
+    
+    init(
+        delay: Int = PayRate.A.rawValue,
+        review: Int = PayRate.A.rawValue,
+        drivingStyle: Int = PayRate.A.rawValue,
+        attendance: Double = Attendance.fullSixteen.rawValue) {
+            self.delay = delay
+            self.review = review
+            self.drivingStyle = drivingStyle
+            self.attendance = attendance
+        }
 }

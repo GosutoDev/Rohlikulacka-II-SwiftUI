@@ -1,4 +1,5 @@
 //
+//
 //  ListDaysView.swift
 //  Rohlikulacka2
 //
@@ -6,11 +7,15 @@
 //
 
 import SwiftUI
+import SwipeActions
+import SwiftData
 
 struct ListDaysView: View {
     
     @Binding var showSheet: Bool
     
+    @Query(sort: \Day.day, order: .reverse) private var days: [Day]
+    let month: Month
     
     var body: some View {
         LazyVStack(alignment: .leading) {
@@ -36,11 +41,11 @@ struct ListDaysView: View {
             }
             .padding(.horizontal)
             
-            ForEach(MockData.days) { day in
+            ForEach(days) { day in
                 NavigationLink {
-                    DayDetailView(day: day)
+                    DayDetailView(month: month, day: day)
                 } label: {
-                    DayView(day: day)
+                    DayView(day: day, month: month)
                 }
                 .padding(.horizontal)
                 .padding(.vertical, 6)
@@ -52,6 +57,6 @@ struct ListDaysView: View {
 
 #Preview {
     ScrollView {
-        ListDaysView(showSheet: .constant(false))
+        ListDaysView(showSheet: .constant(false), month: MockData.months[0])
     }
 }
